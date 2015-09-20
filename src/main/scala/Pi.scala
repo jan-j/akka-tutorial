@@ -6,7 +6,7 @@ import java.util.Calendar
 
 object Pi extends App {
 
-	calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 10000)
+	calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 100000)
 
 	sealed trait PiMessage
 	case object Calculate extends PiMessage
@@ -45,6 +45,8 @@ object Pi extends App {
 	  def receive = {
 		  case Calculate ⇒ {
 		  	println("\n\tStarting calculation: \t%s".format(Calendar.getInstance().getTime()))
+		  	println("\tNumber of elements: \t%d".format(nrOfElements))
+		  	println("\tNumber of messages: \t%d".format(nrOfMessages))
 		    for (i ← 0 until nrOfMessages) workerRouter ! Work(i * nrOfElements, nrOfElements)
 		  }
 		  case Result(value) ⇒ {
