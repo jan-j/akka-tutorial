@@ -1,6 +1,6 @@
 # Akka: Getting Started Tutorial for Scala
 
-Slightly modified app from Akka tutorial from [here](http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html)
+Slightly modified app from Akka tutorial from [here](http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html).
 
 ## How to compile and run
 
